@@ -26,11 +26,11 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
+              <Link href="https://www.linkedin.com/in/thomas-gaye/" className="text-gray-400 hover:text-white">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
+              <Link href="https://github.com/thomasg208/S-G-AI-Lab" className="text-gray-400 hover:text-white">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
@@ -57,6 +57,11 @@ export default function Footer() {
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
                   SONIQCELL™
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-gray-400 hover:text-white">
+                  FusionCell™
                 </Link>
               </li>
             </ul>
@@ -96,12 +101,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Seed Round Q1 2024
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  Traction & Metrics
+                  Seed Round Q1 2025
                 </Link>
               </li>
               <li>
