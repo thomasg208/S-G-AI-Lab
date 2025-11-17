@@ -1,68 +1,64 @@
 import Image from "next/image"
 
-export default function Testimonials() {
-  const testimonials = [
+export default function Founders() {
+  const founders = [
     {
-      quote:
-        "This platform has completely transformed how we manage our projects. The interface is intuitive and the features are exactly what we needed.",
-      author: "Sarah Johnson",
-      role: "Product Manager, TechCorp",
-      avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3",
+      name: "Thomas Gaye",
+      role: "Co-Founder, Chief AI Architect",
+      bio: "U.S. Navy Veteran | Elite AI Systems Engineer | Architect of 35+ AI/AGI Systems across startups and enterprise sectors. Thomas commands the strategic design and deployment of self-optimizing intelligent systems that operate autonomously at scale. With a mission-first mindset forged in military precision, he architects AI/ML infrastructure, leads full-stack AGI execution, and advances sovereign AI operations that serve enterprise and public missions alike.",
+      quote: "We don't just deploy models — we weaponize intelligence to create autonomous systems that adapt, evolve, and dominate their domains.",
+      avatar: "/assets/founders/thomas-gaye.png",
     },
     {
-      quote:
-        "We've seen a 40% increase in productivity since implementing this solution. The automation features alone have saved us countless hours.",
-      author: "Michael Chen",
-      role: "CTO, GrowthStartup",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3",
-    },
-    {
-      quote:
-        "The customer support is exceptional. Whenever we've had questions, the team has been quick to respond and incredibly helpful.",
-      author: "Emily Rodriguez",
-      role: "Operations Director, ScaleUp Inc",
-      avatar:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3",
+      name: "Henry Slebo",
+      role: "Co-Founder, Executive Strategist & Ops Lead",
+      bio: "Ops Commander | Strategy Architect | Growth Execution Specialist. Henry drives organizational strategy, internal systems, and tactical execution across every client engagement. With deep expertise in startup operations, business development, and systems alignment, Henry ensures that each AGI deployment moves with precision, delivers enterprise value, and scales on demand.",
+      quote: "Behind every system is precision ops, forward strategy, and a mandate to win.",
+      avatar: "/assets/founders/henry-slebo.png",
     },
   ]
 
   return (
-    <section id="testimonials" className="relative py-20 md:py-32">
+    <section id="founders" className="relative py-20 md:py-32">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950"></div>
 
       <div className="container relative px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">What Our Customers Say</h2>
-          <p className="mb-16 text-lg text-gray-400">
-            Don't just take our word for it - hear from some of our satisfied customers
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Meet The Founders</h2>
+          <p className="mb-8 text-lg text-gray-400">
+            The visionaries behind S & G AI Lab's autonomous intelligence revolution
           </p>
+          <div className="mb-12 p-4 rounded-lg border border-green-900/30 bg-green-950/20 max-w-2xl mx-auto">
+            <p className="text-sm text-green-300 font-medium mb-2">🎯 Why Invest Now</p>
+            <p className="text-gray-300 text-sm">
+              Military-grade AI expertise • Enterprise deployment experience • Production-ready platforms • $1.8T market opportunity
+            </p>
+          </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid gap-8 md:grid-cols-2">
+          {founders.map((founder, index) => (
             <div
               key={index}
-              className="flex flex-col rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm"
+              className="flex flex-col rounded-xl border border-gray-800 bg-gray-900/50 p-8 backdrop-blur-sm"
             >
-              <svg className="mb-4 h-8 w-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <p className="mb-6 flex-1 text-gray-300">{testimonial.quote}</p>
-              <div className="flex items-center">
+              <div className="flex items-start gap-6 mb-6">
                 <Image
-                  src={testimonial.avatar || "/placeholder.svg"}
-                  alt={testimonial.author}
-                  width={48}
-                  height={48}
-                  className="mr-4 h-12 w-12 rounded-full object-cover"
+                  src={founder.avatar || "/placeholder.svg"}
+                  alt={founder.name}
+                  width={80}
+                  height={80}
+                  className="h-20 w-20 rounded-full object-cover border-2 border-purple-500"
                 />
-                <div>
-                  <p className="font-bold">{testimonial.author}</p>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
+                  <p className="text-purple-400 font-medium mb-3">{founder.role}</p>
+                  <div className="p-4 bg-gray-800/50 rounded-lg border-l-4 border-purple-500">
+                    <p className="text-gray-300 italic">"{founder.quote}"</p>
+                  </div>
                 </div>
               </div>
+              <p className="text-gray-400 leading-relaxed">{founder.bio}</p>
             </div>
           ))}
         </div>

@@ -56,7 +56,7 @@ export default function Integrations() {
           <p className="text-purple-400 font-medium mb-2">Seamless Connections</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Integrate with Your Favorite Tools</h2>
           <p className="text-gray-400 text-lg">
-            SaasPro connects with the tools you already use, making it easy to incorporate into your existing workflow.
+            S & G AI Lab AI Agents seamlessly integrate with your existing ecosystem, transforming your current tools into intelligent, autonomous workflows.
           </p>
         </div>
 
@@ -89,21 +89,6 @@ export default function Integrations() {
           ))}
         </motion.div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 mb-4">...and many more integrations available</p>
-          <a href="#" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center">
-            View all integrations
-            <svg
-              className="w-4 h-4 ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   )

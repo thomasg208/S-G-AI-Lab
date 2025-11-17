@@ -17,38 +17,38 @@ export default function HowItWorks() {
     }
   }, [isInView, mainControls])
 
-  const steps = [
+  const framework = [
     {
       number: "01",
-      title: "Sign Up",
-      description: "Create your account in seconds. No credit card required for the free trial.",
+      title: "Agentic Orchestration",
+      description: "Coordinate multi-agent teams with memory sharing, task segmentation, and goal resolution using LangGraph and our proprietary AI logic chains.",
       color: "from-purple-500 to-purple-700",
       image: "/images/dashboard.png",
-      icon: "/icons/signup.svg", // Add appropriate icons
+      features: ["Multi-agent coordination", "Memory persistence", "Task segmentation", "Goal resolution"],
     },
     {
       number: "02",
-      title: "Configure",
-      description: "Set up your workspace and invite your team members to collaborate.",
+      title: "Custom LLM Pipelines",
+      description: "Fine-tuned or third-party integrated language models optimized for your specific domain and use cases.",
       color: "from-pink-500 to-purple-500",
       image: "/images/team.png",
-      icon: "/icons/configure.svg",
+      features: ["Domain-specific fine-tuning", "Third-party integrations", "Performance optimization", "Cost efficiency"],
     },
     {
       number: "03",
-      title: "Import Data",
-      description: "Easily import your existing data or start fresh with our templates.",
+      title: "Digital Twin Frameworks",
+      description: "Map, simulate, and optimize your operations with agent-powered digital twins that learn and adapt.",
       color: "from-blue-500 to-purple-500",
       image: "/images/webinar.png",
-      icon: "/icons/import.svg",
+      features: ["Real-time simulation", "Bottleneck optimization", "Performance monitoring", "Adaptive learning"],
     },
     {
       number: "04",
-      title: "Start Working",
-      description: "Begin using the platform to streamline your workflow and boost productivity.",
+      title: "UI Shells & Deployment",
+      description: "Powered by our React/Tailwind AGI Framework for rapid deployment and seamless integration.",
       color: "from-purple-500 to-pink-500",
       image: "/images/automation.png",
-      icon: "/icons/launch.svg",
+      features: ["Rapid prototyping", "Seamless integration", "Scalable architecture", "Enterprise-ready"],
     },
   ]
 
@@ -97,14 +97,20 @@ export default function HowItWorks() {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block px-4 py-1.5 text-xs font-medium text-purple-300 bg-purple-950/50 rounded-full backdrop-blur-sm mb-4">
-              Effortless Integration
+              🚀 Startup Infrastructure
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-              How SaasPro <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Transforms</span> Your Workflow
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Proprietary AGI Framework</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              A seamless four-step process that revolutionizes the way your team works
+              We're not just another AI startup. We're building deployable AGI infrastructure that generates revenue today. Our 6 flagship platforms are production-ready with proven white-label models and 40% reseller margins.
             </p>
+            <div className="mt-6 p-4 rounded-lg border border-green-900/30 bg-green-950/20 max-w-2xl mx-auto">
+              <p className="text-sm text-green-300 font-medium mb-2">💰 Investor-Ready Traction</p>
+              <p className="text-gray-300 text-sm">
+                Production-ready platforms • White-label revenue streams • $1.8T market opportunity • Seed round Q1 2024
+              </p>
+            </div>
             
             {/* Animated underline */}
             <div className="relative w-40 h-1 mx-auto mt-6">
@@ -123,9 +129,9 @@ export default function HowItWorks() {
           {/* Main vertical line for desktop */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600/70 via-pink-600/70 to-purple-600/70 rounded-full transform -translate-x-1/2" />
           
-          {/* Steps container */}
+          {/* Framework container */}
           <div className="space-y-20 md:space-y-32">
-            {steps.map((step, index) => (
+            {framework.map((component, index) => (
               <motion.div
                 key={index}
                 variants={{
@@ -136,11 +142,11 @@ export default function HowItWorks() {
                 animate={mainControls}
                 className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12`}
               >
-                {/* Step number without hover animation */}
+                {/* Component number */}
                 <div className="relative shrink-0 z-10">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-900 rounded-full border-2 border-purple-500 flex items-center justify-center shadow-lg shadow-purple-900/20">
                     <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      {step.number}
+                      {component.number}
                     </span>
                   </div>
                   {/* Pulsing circle animation */}
@@ -150,7 +156,7 @@ export default function HowItWorks() {
                   </div>
                 </div>
 
-                {/* Content card without hover animation */}
+                {/* Content card */}
                 <div className="flex-1">
                   <div className="relative bg-gray-900/90 backdrop-blur-md rounded-xl overflow-hidden md:max-w-[90%]">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-800/20 via-transparent to-pink-800/20 opacity-50" />
@@ -159,31 +165,31 @@ export default function HowItWorks() {
                     <div className="p-6 md:p-8 relative">
                       <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                          <p className="text-gray-300">{step.description}</p>
+                          <h3 className="text-2xl font-bold mb-3">{component.title}</h3>
+                          <p className="text-gray-300">{component.description}</p>
                           
                           <ul className="mt-5 space-y-2">
-                            {[1, 2, 3].map((item) => (
-                              <li key={item} className="flex items-start gap-2">
+                            {component.features.map((feature, itemIndex) => (
+                              <li key={itemIndex} className="flex items-start gap-2">
                                 <CheckCircle className="h-5 w-5 text-purple-400 mt-0.5 shrink-0" />
-                                <span className="text-sm text-gray-300">Key feature #{item} for this step</span>
+                                <span className="text-sm text-gray-300">{feature}</span>
                               </li>
                             ))}
                           </ul>
 
                           <div className="mt-6">
                             <a href="#" className="inline-flex items-center text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
-                              Learn more about this step <ChevronRight className="ml-1 h-4 w-4" />
+                              Explore this technology <ChevronRight className="ml-1 h-4 w-4" />
                             </a>
                           </div>
                         </div>
                         
-                        {/* Image without hover animation */}
+                        {/* Image */}
                         <div className="relative shrink-0 md:w-1/2 aspect-[4/3] rounded-lg overflow-hidden">
                           <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 z-10" />
                           <Image
-                            src={step.image || "/placeholder.svg"}
-                            alt={step.title}
+                            src={component.image || "/placeholder.svg"}
+                            alt={component.title}
                             fill
                             className="object-cover"
                           />
@@ -197,27 +203,6 @@ export default function HowItWorks() {
           </div>
         </div>
         
-        {/* CTA without hover animation */}
-        <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <div className="relative inline-block">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur-md opacity-70" />
-            <a 
-              href="#" 
-              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-purple-600/90 to-pink-600/90 text-white font-medium text-lg hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-900/30"
-            >
-              Transform Your Workflow <ArrowRight className="h-5 w-5" />
-            </a>
-          </div>
-          
-          <p className="mt-4 text-gray-400">
-            Join thousands of teams already using SaasPro
-          </p>
-        </motion.div>
       </div>
     </section>
   )

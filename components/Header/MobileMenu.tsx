@@ -1,17 +1,21 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { 
-  Laptop, 
-  Users, 
-  BarChart3, 
-  FileText, 
-  BookOpen, 
+import {
+  Laptop,
+  Users,
+  BarChart3,
+  FileText,
+  BookOpen,
   MessageSquare,
-  LayoutGrid, 
-  CreditCard, 
-  Star, 
+  LayoutGrid,
+  CreditCard,
+  Star,
   LogIn,
-  ChevronRight
+  ChevronRight,
+  TrendingUp,
+  GraduationCap,
+  Shield,
+  Mic
 } from "lucide-react";
 
 export default function MobileMenu({
@@ -26,14 +30,14 @@ export default function MobileMenu({
   return (
     <>
       {/* Backdrop overlay */}
-      <div 
-        className="md:hidden fixed inset-0 top-16 z-40 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+      <div
+        className="md:hidden fixed inset-0 top-16 md:top-20 z-40 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
         onClick={() => setIsMenuOpen(false)}
       />
       
       {/* Menu container - max-content height */}
-      <div 
-        className="md:hidden fixed top-16 left-0 right-0 z-50 animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto"
+      <div
+        className="md:hidden fixed top-16 md:top-20 left-0 right-0 z-50 animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto"
       >
         <div 
           className="mx-3 mt-2 rounded-xl border border-purple-900/30"
@@ -43,11 +47,11 @@ export default function MobileMenu({
           }}
         >
           <nav className="flex flex-col p-3">
-            {/* Products section */}
+            {/* AGI Systems section */}
             <div className="mb-3 pb-3 border-b border-gray-800/50">
               <div className="flex items-center mb-2 px-1">
                 <div className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full mr-2"></div>
-                <h3 className="font-semibold text-white text-base">Products</h3>
+                <h3 className="font-semibold text-white text-base">AGI Systems</h3>
               </div>
               <div className="space-y-0.5">
                 <Link
@@ -57,8 +61,8 @@ export default function MobileMenu({
                 >
                   <Laptop className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Dashboard</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Complete overview</div>
+                    <div className="font-medium text-sm">Urban Vantage™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">White-label enterprise dashboards</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
@@ -67,10 +71,10 @@ export default function MobileMenu({
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Users className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <TrendingUp className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Team Management</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Manage your team</div>
+                    <div className="font-medium text-sm">QFT™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Quantum finance REST API</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
@@ -79,60 +83,66 @@ export default function MobileMenu({
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <BarChart3 className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <BookOpen className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Analytics</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Data visualization</div>
+                    <div className="font-medium text-sm">Crypto Lab™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">White-label crypto education</div>
+                  </div>
+                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <GraduationCap className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <div>
+                    <div className="font-medium text-sm">Nexalytica™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">AI-powered adaptive learning</div>
+                  </div>
+                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Mic className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <div>
+                    <div className="font-medium text-sm">SONIQCELL™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Voice intelligence platform</div>
+                  </div>
+                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Shield className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <div>
+                    <div className="font-medium text-sm">Guardian AI™</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Autonomous safety monitoring</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
               </div>
             </div>
             
-            {/* Resources section */}
+            {/* Blog Insight section */}
             <div className="mb-3 pb-3 border-b border-gray-800/50">
-              <div className="flex items-center mb-2 px-1">
-                <div className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full mr-2"></div>
-                <h3 className="font-semibold text-white text-base">Resources</h3>
-              </div>
-              <div className="space-y-0.5">
-                <Link
-                  href="#"
-                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <FileText className="h-4 w-4 text-pink-400 mr-2 group-hover:text-pink-300 transition-colors" />
-                  <div>
-                    <div className="font-medium text-sm">Documentation</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Guides and references</div>
-                  </div>
-                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <BookOpen className="h-4 w-4 text-pink-400 mr-2 group-hover:text-pink-300 transition-colors" />
-                  <div>
-                    <div className="font-medium text-sm">Tutorials</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Step-by-step guides</div>
-                  </div>
-                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <MessageSquare className="h-4 w-4 text-pink-400 mr-2 group-hover:text-pink-300 transition-colors" />
-                  <div>
-                    <div className="font-medium text-sm">Blog</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Latest news and tips</div>
-                  </div>
-                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
-                </Link>
-              </div>
+              <Link
+                href="#blog"
+                className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <FileText className="h-4 w-4 text-pink-400 mr-2 group-hover:text-pink-300 transition-colors" />
+                <div>
+                  <div className="font-medium text-sm">Blog Insight</div>
+                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">From Our Blog</div>
+                </div>
+                <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
+              </Link>
             </div>
             
             {/* Main navigation links */}
@@ -155,12 +165,12 @@ export default function MobileMenu({
                   <span className="font-medium text-sm">Pricing</span>
                 </Link>
                 <Link
-                  href="#testimonials"
+                  href="#founders"
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Star className="h-4 w-4 text-indigo-400 mr-2 group-hover:text-indigo-300 transition-colors" />
-                  <span className="font-medium text-sm">Testimonials</span>
+                  <span className="font-medium text-sm">Founders</span>
                 </Link>
                 <div
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group cursor-pointer"

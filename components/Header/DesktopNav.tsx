@@ -109,26 +109,14 @@ export default function DesktopNav({
           Products
         </button>
       </div>
-      <div
-        className="relative"
-        onMouseEnter={() => handleMouseEnter("resources")}
-        onMouseLeave={handleMouseLeave}
-        ref={el => { navRefs.current && (navRefs.current.resources = el) }}
-      >
-        <button
-          className={cn(
-            "flex items-center gap-1 text-sm font-medium px-2 py-1 rounded hover:text-white transition",
-            activeMegaMenu === "resources" ? "text-white" : "text-gray-300",
-          )}
-        >
-          Resources
-        </button>
-      </div>
+      <Link href="#blog" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
+        Blog Insight
+      </Link>
       <Link href="#pricing" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
         Pricing
       </Link>
-      <Link href="#testimonials" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
-        Testimonials
+      <Link href="#founders" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
+        Founders
       </Link>
       {/* Mega Menu */}
       {activeMegaMenu && (

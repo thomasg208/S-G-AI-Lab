@@ -25,6 +25,7 @@ type FeaturedItem = {
   description: string
   ctaText: string
   ctaLink: string
+  ctaAction?: () => void
   imageSrc: string
 }
 
@@ -95,11 +96,11 @@ export default function MegaMenu({ data }: MegaMenuProps) {
               <h3 className="mb-1 font-medium text-white">{data.featured.title}</h3>
               <p className="mb-4 text-sm text-gray-400">{data.featured.description}</p>
               <Button
-                asChild
                 variant="outline"
                 className="w-full border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white"
+                onClick={data.featured.ctaAction}
               >
-                <Link href={data.featured.ctaLink}>{data.featured.ctaText}</Link>
+                {data.featured.ctaText}
               </Button>
             </div>
           </div>

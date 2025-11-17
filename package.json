@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prepare": "tw-patch install",
     "lint": "next lint"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
+    "@firebase/app": "^0.14.6",
+    "@firebase/auth": "^1.11.1",
+    "@firebase/firestore": "^4.9.2",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
@@ -45,6 +47,7 @@
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
+    "firebase": "^12.6.0",
     "framer-motion": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",

@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Twitter, Facebook, Instagram, Linkedin, Github } from "lucide-react"
+import Image from "next/image"
+import { Twitter, Linkedin, Github } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -8,24 +9,22 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-purple-600 text-white">S</div>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                SaasPro
-              </span>
+              <div className="relative h-16 w-auto">
+                <Image
+                  src="/images/logos/sg_ai_lab_logo.png"
+                  alt="S&G AI Lab Logo"
+                  width={240}
+                  height={64}
+                  className="h-16 w-auto object-contain"
+                  priority
+                />
+              </div>
             </Link>
-            <p className="mt-4 text-gray-400">Empowering businesses with powerful software solutions since 2023.</p>
+            <p className="mt-4 text-gray-400">Autonomous Agents. Self-Optimizing Digital Twins. Building the infrastructure of autonomous operations since 2025.</p>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-white">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
               </Link>
               <Link href="#" className="text-gray-400 hover:text-white">
                 <Linkedin className="h-5 w-5" />
@@ -38,26 +37,26 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase text-gray-300">Product</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase text-gray-300">Products</h3>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Features
+                  Urban Vantage™
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Pricing
+                  Crypto Lab™
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Integrations
+                  QFT™
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Roadmap
+                  SONIQCELL™
                 </Link>
               </li>
             </ul>
@@ -67,17 +66,17 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Blog
+                  Our Vision
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Careers
+                  Book a Demo
                 </Link>
               </li>
               <li>
@@ -88,28 +87,34 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase text-gray-300">Legal</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase text-gray-300">Investors</h3>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Privacy Policy
+                  Investor Deck
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Terms of Service
+                  Seed Round Q1 2024
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Cookie Policy
+                  Traction & Metrics
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-gray-400 hover:text-white">
+                  Partnership Opportunities
                 </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>© 2024 SaasPro. All rights reserved.</p>
+          <p>S & G AI Lab, Inc. | Autonomous Systems Division | 26175 Fremont Dr Ste 1, Zimmerman, MN 55398</p>
+          <p className="mt-2">© 2025 S & G AI Lab. All rights reserved.</p>
         </div>
       </div>
     </footer>

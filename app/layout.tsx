@@ -6,28 +6,28 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SaasPro - Modern SaaS Platform",
-  description: "Streamline your workflow with our powerful SaaS solution",
-  generator: "Mohamed Djoudir",
+  title: "S&G AI Lab - Autonomous AGI Systems",
+  description: "Autonomous Agents. Self-Optimizing Digital Twins. Building the infrastructure of autonomous operations since 2025.",
+  generator: "S&G AI Lab",
   openGraph: {
-    title: "SaasPro - Modern SaaS Platform",
-    description: "Streamline your workflow with our powerful SaaS solution",
+    title: "S&G AI Lab - Autonomous AGI Systems",
+    description: "Autonomous Agents. Self-Optimizing Digital Twins. Building the infrastructure of autonomous operations since 2025.",
     images: [
       {
-        url: '/image.png',
+        url: '/images/logos/sg_ai_lab_logo.png',
         width: 1200,
         height: 630,
-        alt: 'SaasPro',
+        alt: 'S&G AI Lab',
       }
     ],
     type: 'website',
-    siteName: 'SaasPro',
+    siteName: 'S&G AI Lab',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SaasPro - Modern SaaS Platform",
-    description: "Streamline your workflow with our powerful SaaS solution",
-    images: ['/image.png'],
+    title: "S&G AI Lab - Autonomous AGI Systems",
+    description: "Autonomous Agents. Self-Optimizing Digital Twins. Building the infrastructure of autonomous operations since 2025.",
+    images: ['/images/logos/sg_ai_lab_logo.png'],
   }
 };
 

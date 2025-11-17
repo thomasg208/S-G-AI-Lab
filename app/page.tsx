@@ -30,6 +30,10 @@ const ScrollRestoration = () => {
 };
 
 // Lazy load components
+const AILabShowcase = dynamic(() => import("@/components/AILabShowcase"), {
+  ssr: false,
+});
+
 const SocialProof = dynamic(() => import("@/components/social-proof"), {
   ssr: false,
 });
@@ -42,7 +46,7 @@ const HowItWorks = dynamic(() => import("../components/how-it-works"), {
   ssr: false,
 });
 
-const Testimonials = dynamic(() => import("@/components/testimonials"), {
+const Founders = dynamic(() => import("@/components/testimonials"), {
   ssr: false,
 });
 
@@ -71,6 +75,10 @@ const Cta = dynamic(() => import("@/components/cta"), {
 });
 
 const Footer = dynamic(() => import("@/components/footer"), {
+  ssr: false,
+});
+
+const ContactModal = dynamic(() => import("@/components/ContactModal"), {
   ssr: false,
 });
 
@@ -103,6 +111,9 @@ export default function LandingPage() {
       <Header />
       <Hero />
       <LazyLoad>
+        <AILabShowcase />
+      </LazyLoad>
+      <LazyLoad>
         <SocialProof />
       </LazyLoad>
       <LazyLoad>
@@ -112,7 +123,7 @@ export default function LandingPage() {
         <HowItWorks />
       </LazyLoad>
       <LazyLoad>
-        <Testimonials />
+        <Founders />
       </LazyLoad>
       <LazyLoad>
         <Pricing />
@@ -135,6 +146,7 @@ export default function LandingPage() {
       <LazyLoad>
         <Footer />
       </LazyLoad>
+      <ContactModal />
     </div>
   );
 }

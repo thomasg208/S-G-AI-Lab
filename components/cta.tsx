@@ -1,9 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { useState } from "react"
+import DemoRequestForm from "@/components/DemoRequestForm"
 
 export default function Cta() {
+  const [isDemoFormOpen, setIsDemoFormOpen] = useState(false)
+
   return (
-    <section className="relative py-16 overflow-hidden">
+    <>
+      <section className="relative py-16 overflow-hidden">
       {/* Simple background */}
       <div className="absolute inset-0 bg-gray-950"></div>
 
@@ -19,43 +26,53 @@ export default function Cta() {
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="md:max-w-xl">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                  Ready to transform your business?
+                  Ready to revolutionize battery development?
                 </h2>
                 <p className="text-gray-300">
-                  Join thousands of companies already using our platform.
+                  Join pioneering researchers and companies leveraging FusionCell's AI-powered digital twin technology.
                 </p>
               </div>
               <div>
-                <Button className="h-12 px-6 rounded-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-md">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                <Button
+                  onClick={() => setIsDemoFormOpen(true)}
+                  className="h-12 px-6 rounded-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-md"
+                >
+                  Request Early Access <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
 
-            {/* Simplified features row */}
+            {/* Startup features row */}
             <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 pt-6 border-t border-gray-800">
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-gray-300 text-sm">No credit card required</span>
+                <span className="text-gray-300 text-sm">Early access program</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-gray-300 text-sm">14-day free trial</span>
+                <span className="text-gray-300 text-sm">Research partnership</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-gray-300 text-sm">Cancel anytime</span>
+                <span className="text-gray-300 text-sm">Beta testing opportunities</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      </section>
+
+      {/* Demo Request Form Modal */}
+      <DemoRequestForm
+        isOpen={isDemoFormOpen}
+        onClose={() => setIsDemoFormOpen(false)}
+      />
+    </>
   )
 }

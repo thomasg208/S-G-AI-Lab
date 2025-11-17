@@ -5,14 +5,16 @@ import DesktopNav from "./DesktopNav"
 import MobileMenu from "./MobileMenu"
 import Logo from "./Logo"
 import HeaderActions from "./HeaderActions"
+import DemoRequestForm from "@/components/DemoRequestForm"
 // Add missing icon imports
-import { Menu, X, ChevronDown, Laptop, Users, BarChart3, Settings, HelpCircle, FileText, Zap } from "lucide-react"
+import { Menu, X, ChevronDown, Laptop, Users, BarChart3, Settings, HelpCircle, FileText, Zap, BookOpen, TrendingUp, GraduationCap, Shield, Mic } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, opacity: 0 })
   const [isHoveringMenu, setIsHoveringMenu] = useState(false)
+  const [isDemoFormOpen, setIsDemoFormOpen] = useState(false)
   const menuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const navRefs = useRef<Record<string, HTMLDivElement | null>>({})
   const megaMenuRef = useRef<HTMLDivElement>(null)
@@ -74,134 +76,128 @@ export default function Header() {
 
   const megaMenus = {
     products: {
-      title: "Products",
+      title: "AGI Systems",
       columns: [
         {
-          title: "Core Platform",
+          title: "Interface & Analytics",
           items: [
             {
               icon: <Laptop className="h-5 w-5" />,
-              title: "Dashboard",
-              description: "Complete overview of your business",
+              title: "Urban Vantage™",
+              description: "White-label enterprise intelligence dashboards",
               href: "#",
             },
             {
-              icon: <Users className="h-5 w-5" />,
-              title: "Team Management",
-              description: "Organize and manage your team",
-              href: "#",
-            },
-            {
-              icon: <BarChart3 className="h-5 w-5" />,
-              title: "Analytics",
-              description: "Insights and data visualization",
+              icon: <TrendingUp className="h-5 w-5" />,
+              title: "QFT™",
+              description: "REST API for quant finance and wealth management",
               href: "#",
             },
           ],
         },
         {
-          title: "Add-ons",
+          title: "Learning Intelligence",
           items: [
             {
-              icon: <Zap className="h-5 w-5" />,
-              title: "Automation",
-              description: "Streamline your workflows",
+              icon: <BookOpen className="h-5 w-5" />,
+              title: "Crypto Lab™",
+              description: "White-label crypto education platform",
               href: "#",
             },
             {
-              icon: <Settings className="h-5 w-5" />,
-              title: "Integrations",
-              description: "Connect with other tools",
+              icon: <GraduationCap className="h-5 w-5" />,
+              title: "Nexalytica™",
+              description: "AI-powered adaptive learning platform",
               href: "#",
             },
+          ],
+        },
+        {
+          title: "Voice & Media",
+          items: [
             {
-              icon: <FileText className="h-5 w-5" />,
-              title: "Reports",
-              description: "Generate detailed reports",
+              icon: <Mic className="h-5 w-5" />,
+              title: "SONIQCELL™",
+              description: "Voice intelligence platform with human-quality speech",
+              href: "#",
+            },
+          ],
+        },
+        {
+          title: "Safety & Security",
+          items: [
+            {
+              icon: <Shield className="h-5 w-5" />,
+              title: "Guardian AI™",
+              description: "Autonomous safety monitoring and response",
               href: "#",
             },
           ],
         },
       ],
       featured: {
-        title: "New Feature",
-        description: "Try our new AI-powered analytics dashboard",
-        ctaText: "Learn More",
+        title: "White-Label Opportunity",
+        description: "Deploy enterprise AGI systems under your brand with 40% reseller margins",
+        ctaText: "Request a Demo",
         ctaLink: "#",
+        ctaAction: () => setIsDemoFormOpen(true),
         imageSrc: "/images/dashboard.png",
       },
     },
     resources: {
-      title: "Resources",
+      title: "Blog Insight",
       columns: [
         {
-          title: "Help & Support",
+          title: "Blog",
           items: [
             {
               icon: <FileText className="h-5 w-5" />,
-              title: "Documentation",
-              description: "Guides and references",
-              href: "#",
+              title: "Blog",
+              description: "AGI research & insights",
+              href: "#blog",
             },
-            {
-              icon: <HelpCircle className="h-5 w-5" />,
-              title: "Knowledge Base",
-              description: "Answers to common questions",
-              href: "#",
-            },
-            {
-              icon: <Users className="h-5 w-5" />,
-              title: "Community Forum",
-              description: "Connect with other users",
-              href: "#",
-            },
-          ],
-        },
-        {
-          title: "Learning",
-          items: [
-            { icon: <Laptop className="h-5 w-5" />, title: "Tutorials", description: "Step-by-step guides", href: "#" },
-            {
-              icon: <Zap className="h-5 w-5" />,
-              title: "Webinars",
-              description: "Live and recorded sessions",
-              href: "#",
-            },
-            { icon: <FileText className="h-5 w-5" />, title: "Blog", description: "Latest news and tips", href: "#" },
           ],
         },
       ],
       featured: {
-        title: "Latest Webinar",
-        description: "Maximizing Productivity with SaasPro",
-        ctaText: "Watch Now",
-        ctaLink: "#",
+        title: "Latest Articles",
+        description: "Read our latest insights on AGI technology and startup journey",
+        ctaText: "Read Blog",
+        ctaLink: "#blog",
         imageSrc: "/images/webinar.png",
       },
     },
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-gray-800 bg-gray-950/80 backdrop-blur-md shadow-lg">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-8">
-        <div className="flex items-center gap-6">
-          <Logo />
-          <DesktopNav
-            activeMegaMenu={activeMegaMenu}
-            setActiveMegaMenu={setActiveMegaMenu}
-            indicatorStyle={indicatorStyle}
-            setIndicatorStyle={setIndicatorStyle}
-            navRefs={navRefs}
-            menuTimeoutRef={menuTimeoutRef}
-            isHoveringMenu={isHoveringMenu}
-            setIsHoveringMenu={setIsHoveringMenu}
-            megaMenuRef={megaMenuRef as React.RefObject<HTMLDivElement>}
-            megaMenus={megaMenus}
-          />
+    <>
+      <header className="sticky top-0 z-40 border-b border-gray-800 bg-gray-950/80 backdrop-blur-md shadow-lg">
+        <div className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-8">
+          <div className="flex items-center gap-4 md:gap-6">
+            <Logo />
+            <DesktopNav
+              activeMegaMenu={activeMegaMenu}
+              setActiveMegaMenu={setActiveMegaMenu}
+              indicatorStyle={indicatorStyle}
+              setIndicatorStyle={setIndicatorStyle}
+              navRefs={navRefs}
+              menuTimeoutRef={menuTimeoutRef}
+              isHoveringMenu={isHoveringMenu}
+              setIsHoveringMenu={setIsHoveringMenu}
+              megaMenuRef={megaMenuRef as React.RefObject<HTMLDivElement>}
+              megaMenus={megaMenus}
+            />
+          </div>
+          <HeaderActions isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         </div>
-        <HeaderActions isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
-      <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-    </header>
+        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      </header>
+
+      {/* Demo Request Form Modal */}
+      <DemoRequestForm
+        isOpen={isDemoFormOpen}
+        onClose={() => setIsDemoFormOpen(false)}
+      />
+    </>
   )
 }
