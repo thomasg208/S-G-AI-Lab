@@ -15,7 +15,10 @@ import {
   TrendingUp,
   GraduationCap,
   Shield,
-  Mic
+  Mic,
+  Layers,
+  Zap,
+  Cpu
 } from "lucide-react";
 
 export default function MobileMenu({
@@ -47,11 +50,11 @@ export default function MobileMenu({
           }}
         >
           <nav className="flex flex-col p-3">
-            {/* AGI Systems section */}
+            {/* Platform & Ecosystem section */}
             <div className="mb-3 pb-3 border-b border-gray-800/50">
               <div className="flex items-center mb-2 px-1">
                 <div className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full mr-2"></div>
-                <h3 className="font-semibold text-white text-base">AGI Systems</h3>
+                <h3 className="font-semibold text-white text-base">Wingman Platform</h3>
               </div>
               <div className="space-y-0.5">
                 <Link
@@ -59,10 +62,10 @@ export default function MobileMenu({
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Laptop className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <Layers className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Urban Vantage™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">White-label enterprise dashboards</div>
+                    <div className="font-medium text-sm">Intelligence Layer</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Foundational AI engine</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
@@ -71,10 +74,10 @@ export default function MobileMenu({
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <TrendingUp className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <Zap className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">QFT™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Quantum finance REST API</div>
+                    <div className="font-medium text-sm">Airport AI Concierge</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Seamless terminal navigation</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
@@ -85,8 +88,8 @@ export default function MobileMenu({
                 >
                   <BookOpen className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Crypto Lab™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">White-label crypto education</div>
+                    <div className="font-medium text-sm">Tourism Experiences</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Interactive cultural guides</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
@@ -95,34 +98,10 @@ export default function MobileMenu({
                   className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <GraduationCap className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
+                  <Cpu className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
                   <div>
-                    <div className="font-medium text-sm">Nexalytica™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">AI-powered adaptive learning</div>
-                  </div>
-                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Mic className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                  <div>
-                    <div className="font-medium text-sm">SONIQCELL™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Voice intelligence platform</div>
-                  </div>
-                  <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center py-2 px-3 text-gray-200 rounded-lg hover:bg-gray-800 transition-all duration-200 group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Shield className="h-4 w-4 text-purple-400 mr-2 group-hover:text-purple-300 transition-colors" />
-                  <div>
-                    <div className="font-medium text-sm">Guardian AI™</div>
-                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Autonomous safety monitoring</div>
+                    <div className="font-medium text-sm">Enterprise APIs</div>
+                    <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">Integrate Wingman directly</div>
                   </div>
                   <ChevronRight className="ml-auto h-3 w-3 text-gray-500 group-hover:text-gray-300 transition-colors" />
                 </Link>
