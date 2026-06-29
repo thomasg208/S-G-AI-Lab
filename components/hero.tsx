@@ -31,7 +31,10 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center mb-16">
-              <Button className="bg-purple-600 text-white hover:bg-purple-700 h-12 px-8 text-base font-semibold shadow-lg shadow-purple-600/25 rounded-full">
+              <Button 
+                onClick={() => window.open("https://calendly.com/thomasg208/30min?month=2026-06", "_blank")}
+                className="bg-purple-600 text-white hover:bg-purple-700 h-12 px-8 text-base font-semibold shadow-lg shadow-purple-600/25 rounded-full"
+              >
                 Request a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

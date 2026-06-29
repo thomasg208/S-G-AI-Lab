@@ -27,7 +27,7 @@ export default function HeaderActions({
           Management
         </button>
         <Button
-          onClick={() => setIsDemoFormOpen(true)}
+          onClick={() => window.open("https://calendly.com/thomasg208/30min?month=2026-06", "_blank")}
           className="bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:from-purple-700 hover:to-pink-600 shadow-md"
         >
           Request Demo
