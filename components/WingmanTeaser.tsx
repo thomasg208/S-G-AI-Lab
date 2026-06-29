@@ -1,17 +1,13 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { Play } from "lucide-react"
 
 export default function WingmanTeaser() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   const handlePlay = () => {
     setIsPlaying(true)
-    if (videoRef.current) {
-      videoRef.current.play()
-    }
   }
 
   return (
@@ -22,16 +18,15 @@ export default function WingmanTeaser() {
           <div className="relative w-full aspect-video bg-gradient-to-br from-gray-900 to-gray-800">
              
              {/* Video Element */}
-             <video 
-                ref={videoRef}
-                playsInline
-                preload="metadata"
-                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 bg-black ${isPlaying ? 'opacity-100 relative z-20' : 'opacity-0'}`}
-                controls={isPlaying}
-             >
-                <source src="/videos/wingman_developed_by_sg_ai_lab.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-             </video>
+             {isPlaying && (
+               <iframe 
+                 className="absolute inset-0 w-full h-full relative z-20"
+                 src="https://www.youtube.com/embed/Lm6EIjSqarE?autoplay=1&rel=0&modestbranding=1"
+                 title="Wingman Demonstration"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowFullScreen
+               ></iframe>
+             )}
 
              {/* Mockup Background Image Area */}
              {!isPlaying && (
