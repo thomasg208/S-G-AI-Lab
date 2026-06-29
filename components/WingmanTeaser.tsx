@@ -24,11 +24,14 @@ export default function WingmanTeaser() {
              {/* Video Element */}
              <video 
                 ref={videoRef}
-                src="/videos/wingman_developed_by_sg_ai_lab.mp4" 
                 playsInline
+                preload="metadata"
                 className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 bg-black ${isPlaying ? 'opacity-100 relative z-20' : 'opacity-0'}`}
                 controls={isPlaying}
-             />
+             >
+                <source src="/videos/wingman_developed_by_sg_ai_lab.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+             </video>
 
              {/* Mockup Background Image Area */}
              {!isPlaying && (
