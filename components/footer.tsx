@@ -20,7 +20,7 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="mt-4 text-gray-400">A founder-led deep-tech startup building applied intelligence systems. Currently developing FusionCell — an AI-powered digital twin for battery simulation.</p>
+            <p className="mt-4 text-gray-400">A founder-led deep-tech startup building applied intelligence systems. Currently developing Wingman.</p>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-white">
                 <Twitter className="h-5 w-5" />
