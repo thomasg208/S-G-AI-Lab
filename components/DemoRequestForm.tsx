@@ -35,12 +35,12 @@ const formSchema = z.object({
 type DemoForm = z.infer<typeof formSchema>
 
 const products = [
-  { id: "urban-vantage", name: "Urban Vantage™", description: "Precision real-estate analytics platform designed to empower investors, developers, and property managers with intelligent data-driven insights" },
-  { id: "crypto-lab", name: "Crypto Lab™", description: "Next-generation educational platform with open-source crypto and blockchain courses, interactive lessons, and AGI-powered mentorship" },
-  { id: "nexalytica", name: "Nexalytica™", description: "Next-gen analytics platform with AI-driven adaptive learning and personalized education paths" },
-  { id: "qft", name: "QFT™", description: "Quantum financial tools with game theory simulation, AGI integration, and real-time learning engine for DeFi" },
-  { id: "guardian-ai", name: "Guardian AI™", description: "AI security suite with autonomous monitoring and threat protection" },
-  { id: "fusioncell", name: "FusionCell™", description: "AI-driven battery digital twin platform revolutionizing energy management with predictive analytics" },
+  { id: "airports", name: "Airports & Aviation", description: "Smart wayfinding, real-time gate updates, and accessible routing for travelers." },
+  { id: "hospitals", name: "Hospitals & Healthcare", description: "Patient guidance, department finders, and emergency routing for better care." },
+  { id: "universities", name: "Universities & Campuses", description: "Navigate campuses, find classrooms, and ensure student safety." },
+  { id: "cruise-ports", name: "Cruise Ports & Terminals", description: "Seamless journeys from dock to destination with multi-terminal support." },
+  { id: "shopping-malls", name: "Shopping Malls & Retail", description: "Store navigation, interactive maps, and localized promotions." },
+  { id: "military-bases", name: "Defense & Military", description: "Secure wayfinding, facility access, and operational efficiency." },
 ]
 
 const timelines = [

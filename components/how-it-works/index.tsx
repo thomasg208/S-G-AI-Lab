@@ -17,38 +17,38 @@ export default function HowItWorks() {
     }
   }, [isInView, mainControls])
 
-  const framework = [
+  const approach = [
     {
       number: "01",
-      title: "Agentic Orchestration",
-      description: "Coordinate multi-agent teams with memory sharing, task segmentation, and goal resolution using LangGraph and our proprietary AI logic chains.",
+      title: "Physics-Informed AI",
+      description: "We combine first-principles physics models with neural networks. This hybrid approach ensures our simulations are grounded in real science, not just pattern matching.",
       color: "from-purple-500 to-purple-700",
       image: "/images/dashboard.png",
-      features: ["Multi-agent coordination", "Memory persistence", "Task segmentation", "Goal resolution"],
+      features: ["First-principles modeling", "Neural network augmentation", "Scientific accuracy", "Interpretable results"],
     },
     {
       number: "02",
-      title: "Custom LLM Pipelines",
-      description: "Fine-tuned or third-party integrated language models optimized for your specific domain and use cases.",
+      title: "Digital Twin Architecture",
+      description: "FusionCell creates virtual representations of physical battery systems that evolve and learn alongside their real-world counterparts.",
       color: "from-pink-500 to-purple-500",
       image: "/images/team.png",
-      features: ["Domain-specific fine-tuning", "Third-party integrations", "Performance optimization", "Cost efficiency"],
+      features: ["Real-time synchronization", "Predictive modeling", "State estimation", "Performance optimization"],
     },
     {
       number: "03",
-      title: "Digital Twin Frameworks",
-      description: "Map, simulate, and optimize your operations with agent-powered digital twins that learn and adapt.",
+      title: "Iterative Development",
+      description: "We build in small, validated increments. Each feature is tested against real data before we move forward. No shortcuts, no assumptions.",
       color: "from-blue-500 to-purple-500",
       image: "/images/webinar.png",
-      features: ["Real-time simulation", "Bottleneck optimization", "Performance monitoring", "Adaptive learning"],
+      features: ["Validated increments", "Real-data testing", "Continuous improvement", "Honest assessment"],
     },
     {
       number: "04",
-      title: "UI Shells & Deployment",
-      description: "Powered by our React/Tailwind AGI Framework for rapid deployment and seamless integration.",
+      title: "Partner-Driven Roadmap",
+      description: "Our development priorities are shaped by conversations with early access partners. We build what's actually needed, not what sounds impressive.",
       color: "from-purple-500 to-pink-500",
       image: "/images/automation.png",
-      features: ["Rapid prototyping", "Seamless integration", "Scalable architecture", "Enterprise-ready"],
+      features: ["User-driven features", "Practical solutions", "Open feedback loops", "Transparent progress"],
     },
   ]
 
@@ -97,18 +97,19 @@ export default function HowItWorks() {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block px-4 py-1.5 text-xs font-medium text-purple-300 bg-purple-950/50 rounded-full backdrop-blur-sm mb-4">
-              🚀 Startup Infrastructure
+              🔬 Our Technical Approach
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Proprietary AGI Framework</span>
+              How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Build FusionCell</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              We're not just another AI startup. We're building deployable AGI infrastructure that generates revenue today. Our 6 flagship platforms are production-ready with proven white-label models and 40% reseller margins.
+              We're taking a methodical, science-first approach to building AI-powered battery simulation. 
+              Here's how our small team approaches big technical challenges.
             </p>
-            <div className="mt-6 p-4 rounded-lg border border-green-900/30 bg-green-950/20 max-w-2xl mx-auto">
-              <p className="text-sm text-green-300 font-medium mb-2">💰 Investor-Ready Traction</p>
+            <div className="mt-6 p-4 rounded-lg border border-orange-900/30 bg-orange-950/20 max-w-2xl mx-auto">
+              <p className="text-sm text-orange-300 font-medium mb-2">⚙️ Development Philosophy</p>
               <p className="text-gray-300 text-sm">
-                Production-ready platforms • White-label revenue streams • $1.8T market opportunity • Seed round Q1 2024
+                Prototype-first approach • Validated by real data • Transparent progress • Partner feedback integration
               </p>
             </div>
             
@@ -129,9 +130,9 @@ export default function HowItWorks() {
           {/* Main vertical line for desktop */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600/70 via-pink-600/70 to-purple-600/70 rounded-full transform -translate-x-1/2" />
           
-          {/* Framework container */}
+          {/* Approach container */}
           <div className="space-y-20 md:space-y-32">
-            {framework.map((component, index) => (
+            {approach.map((component, index) => (
               <motion.div
                 key={index}
                 variants={{
@@ -177,11 +178,6 @@ export default function HowItWorks() {
                             ))}
                           </ul>
 
-                          <div className="mt-6">
-                            <a href="#" className="inline-flex items-center text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
-                              Explore this technology <ChevronRight className="ml-1 h-4 w-4" />
-                            </a>
-                          </div>
                         </div>
                         
                         {/* Image */}

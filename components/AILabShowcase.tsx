@@ -1,29 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Zap, Cpu, Rocket, Sparkles, Lightbulb } from "lucide-react"
+import { Brain, Zap, Cpu, Rocket, Sparkles, Shield } from "lucide-react"
 
 export default function AILabShowcase() {
-  const innovations = [
+  const coreCapabilities = [
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "AGI Research",
-      description: "Pushing boundaries of artificial general intelligence with novel architectures"
+      title: "Applied AI Research",
+      description: "Focused practical research on physics-informed neural networks and digital twin architectures"
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Digital Twins",
-      description: "Creating AI-powered simulations that mirror real-world systems with unprecedented accuracy"
+      title: "Digital Twin Development",
+      description: "Building simulation systems that model real-world physics with AI-enhanced prediction"
     },
     {
-      icon: <Cpu className="w-6 h-6" />,
-      title: "Neural Engineering",
-      description: "Designing next-generation neural networks for specialized domain applications"
+      icon: <Shield className="w-6 h-6" />,
+      title: "Military-Grade Rigor",
+      description: "Engineering discipline and precision forged through U.S. Navy veteran leadership"
     },
     {
       icon: <Rocket className="w-6 h-6" />,
-      title: "Rapid Prototyping",
-      description: "From concept to deployment in weeks, not years - accelerating innovation cycles"
+      title: "Lean Startup Execution",
+      description: "Fast iteration cycles with transparent development and honest progress reporting"
     }
   ]
 
@@ -70,7 +70,7 @@ export default function AILabShowcase() {
           <motion.div variants={itemVariants} className="mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-800/50">
               <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-purple-300 font-medium">S&G AI Lab</span>
+              <span className="text-purple-300 font-medium">S&G AI Lab — Est. 2025</span>
             </div>
           </motion.div>
           
@@ -78,21 +78,21 @@ export default function AILabShowcase() {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-white bg-clip-text text-transparent"
           >
-            Where AI Innovation
+            Two Founders.
             <br />
-            Meets Reality
+            One Mission.
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
             className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            We're not just another AI company. We're a laboratory of dreamers, researchers, and engineers 
-            pushing the boundaries of what's possible with artificial intelligence.
+            We're a small, highly technical deep-tech startup. Two brothers — one a U.S. Navy veteran and AI systems engineer, 
+            the other an operations and strategy lead — building applied intelligence systems that solve real problems.
           </motion.p>
         </motion.div>
 
-        {/* Innovation Grid */}
+        {/* Core Capabilities Grid */}
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
           variants={containerVariants}
@@ -100,7 +100,7 @@ export default function AILabShowcase() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {innovations.map((innovation, index) => (
+          {coreCapabilities.map((capability, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -110,17 +110,17 @@ export default function AILabShowcase() {
               <div className="relative bg-gray-900/80 border border-gray-800 rounded-lg p-6 h-full hover:border-purple-800/50 transition-colors duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-purple-900/30 rounded-lg text-purple-400">
-                    {innovation.icon}
+                    {capability.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-white">{innovation.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">{capability.title}</h3>
                 </div>
-                <p className="text-gray-400 leading-relaxed">{innovation.description}</p>
+                <p className="text-gray-400 leading-relaxed">{capability.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Lab Stats */}
+        {/* Company Stats */}
         <motion.div
           className="text-center"
           initial="hidden"
@@ -130,8 +130,8 @@ export default function AILabShowcase() {
         >
           <motion.div variants={itemVariants} className="mb-8">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-800/50">
-              <Lightbulb className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-medium">Bleeding-Edge Innovation</span>
+              <Cpu className="w-5 h-5 text-purple-400" />
+              <span className="text-white font-medium">Honest Innovation, Transparent Progress</span>
             </div>
           </motion.div>
           
@@ -139,23 +139,23 @@ export default function AILabShowcase() {
             variants={itemVariants}
             className="text-lg text-gray-300 max-w-3xl mx-auto mb-12"
           >
-            Our lab operates at the intersection of research and application, 
-            transforming theoretical breakthroughs into practical solutions that 
-            solve real-world problems.
+            We're not claiming to be a large research lab or to have enterprise-ready products. 
+            We're an early-stage startup with a clear vision, strong technical foundations, 
+            and the discipline to execute. FusionCell is our first step toward building something meaningful.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg">
               <div className="text-2xl font-bold text-purple-400 mb-1">Founded 2025</div>
-              <div className="text-sm text-gray-400">Startup Agility</div>
+              <div className="text-sm text-gray-400">Early-Stage Startup</div>
             </div>
             <div className="px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg">
-              <div className="text-2xl font-bold text-pink-400 mb-1">Stealth Mode</div>
-              <div className="text-sm text-gray-400">Building in Public</div>
+              <div className="text-2xl font-bold text-pink-400 mb-1">2 Founders</div>
+              <div className="text-sm text-gray-400">Veteran-Led Team</div>
             </div>
             <div className="px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg">
-              <div className="text-2xl font-bold text-purple-400 mb-1">First Product</div>
-              <div className="text-sm text-gray-400">FusionCell</div>
+              <div className="text-2xl font-bold text-purple-400 mb-1">FusionCell</div>
+              <div className="text-sm text-gray-400">Primary Focus</div>
             </div>
           </motion.div>
         </motion.div>

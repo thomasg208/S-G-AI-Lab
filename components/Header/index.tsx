@@ -7,7 +7,7 @@ import Logo from "./Logo"
 import HeaderActions from "./HeaderActions"
 import DemoRequestForm from "@/components/DemoRequestForm"
 // Add missing icon imports
-import { Menu, X, ChevronDown, Laptop, Users, BarChart3, Settings, HelpCircle, FileText, Zap, BookOpen, TrendingUp, GraduationCap, Shield, Mic } from "lucide-react"
+import { Menu, X, ChevronDown, Battery, Beaker, Layers, Cpu, FileText, BookOpen, Zap } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -76,93 +76,76 @@ export default function Header() {
 
   const megaMenus = {
     products: {
-      title: "AGI Systems",
+      title: "Platform & Ecosystem",
       columns: [
         {
-          title: "Interface & Analytics",
+          title: "Core Platform",
           items: [
             {
-              icon: <Laptop className="h-5 w-5" />,
-              title: "Urban Vantage™",
-              description: "White-label enterprise intelligence dashboards",
-              href: "#",
-            },
-            {
-              icon: <TrendingUp className="h-5 w-5" />,
-              title: "QFT™",
-              description: "REST API for quant finance and wealth management",
+              icon: <Layers className="h-5 w-5" />,
+              title: "Intelligence Layer",
+              description: "The foundational AI engine powering spatial awareness",
               href: "#",
             },
           ],
         },
         {
-          title: "Learning Intelligence",
+          title: "Ecosystem",
           items: [
+            {
+              icon: <Zap className="h-5 w-5" />,
+              title: "Airport AI Concierge",
+              description: "Seamless navigation for complex terminals",
+              href: "#",
+            },
             {
               icon: <BookOpen className="h-5 w-5" />,
-              title: "Crypto Lab™",
-              description: "White-label crypto education platform",
-              href: "#",
-            },
-            {
-              icon: <GraduationCap className="h-5 w-5" />,
-              title: "Nexalytica™",
-              description: "AI-powered adaptive learning platform",
+              title: "Tourism Experiences",
+              description: "Interactive guides for cultural locations",
               href: "#",
             },
           ],
         },
         {
-          title: "Voice & Media",
+          title: "Developer Tools",
           items: [
             {
-              icon: <Mic className="h-5 w-5" />,
-              title: "SONIQCELL™",
-              description: "Voice intelligence platform with human-quality speech",
-              href: "#",
-            },
-          ],
-        },
-        {
-          title: "Safety & Security",
-          items: [
-            {
-              icon: <Shield className="h-5 w-5" />,
-              title: "Guardian AI™",
-              description: "Autonomous safety monitoring and response",
+              icon: <Cpu className="h-5 w-5" />,
+              title: "Enterprise APIs",
+              description: "Integrate Wingman into your applications",
               href: "#",
             },
           ],
         },
       ],
       featured: {
-        title: "White-Label Opportunity",
-        description: "Deploy enterprise AGI systems under your brand with 40% reseller margins",
-        ctaText: "Request a Demo",
+        title: "Early Access Available",
+        description: "Interested in exploring the Wingman Platform? We're looking for early partners to help shape our ecosystem.",
+        ctaText: "Request Access",
         ctaLink: "#",
         ctaAction: () => setIsDemoFormOpen(true),
         imageSrc: "/images/dashboard.png",
       },
     },
     resources: {
-      title: "Blog Insight",
+      title: "Updates & Insights",
       columns: [
         {
-          title: "Blog",
+          title: "From the Lab",
           items: [
             {
               icon: <FileText className="h-5 w-5" />,
-              title: "Blog",
-              description: "AGI research & insights",
+              title: "Founder Updates",
+              description: "Honest progress reports and technical insights",
               href: "#blog",
             },
           ],
         },
       ],
       featured: {
-        title: "Latest Articles",
-        description: "Read our latest insights on AGI technology and startup journey",
-        ctaText: "Read Blog",
+        title: "Transparent Development",
+        description: "Follow our journey as we build FusionCell — the wins, the challenges, and everything in between.",
+        ctaText: "Read Updates",
         ctaLink: "#blog",
         imageSrc: "/images/webinar.png",
       },

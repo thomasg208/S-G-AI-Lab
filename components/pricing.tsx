@@ -1,52 +1,55 @@
 "use client"
 
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, Clock, Users, Handshake } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import DemoRequestForm from "@/components/DemoRequestForm"
 
 export default function Pricing() {
   const [isDemoFormOpen, setIsDemoFormOpen] = useState(false)
-  const plans = [
+  const engagementOptions = [
     {
-      name: "Startup Launch",
-      price: "$499",
-      description: "Perfect for early-stage companies and pilot projects",
+      name: "Early Access Partner",
+      price: "Free",
+      description: "For researchers and companies who want to explore FusionCell in its current state",
       features: [
-        "1 AGI Platform License",
-        "Up to 1,000 Monthly API Calls",
-        "Basic White-Label Options",
-        "Email Support",
-        "Documentation Access"
+        "Access to FusionCell prototype",
+        "Direct communication with founders",
+        "Influence on product development",
+        "Priority for future features",
+        "No commitment required"
       ],
+      icon: <Clock className="h-6 w-6 text-purple-400" />,
     },
     {
-      name: "Growth Scale",
-      price: "$1,999",
-      description: "Ideal for scaling businesses with multiple platforms",
+      name: "Research Collaborator",
+      price: "Partnership",
+      description: "For academic institutions and research labs interested in co-development",
       features: [
-        "3 AGI Platform Licenses",
-        "Up to 10,000 Monthly API Calls",
-        "Full White-Label Customization",
-        "Priority Support & SLA",
-        "Reseller Rights (30% Margin)",
-        "Custom Integration Support"
+        "Joint research initiatives",
+        "Custom simulation scenarios",
+        "Co-authored publications",
+        "Access to internal roadmap",
+        "Regular technical sync calls",
+        "Shared IP arrangements (negotiable)"
       ],
       popular: true,
+      icon: <Users className="h-6 w-6 text-purple-400" />,
     },
     {
-      name: "Enterprise Partner",
-      price: "Custom",
-      description: "For large organizations and strategic resellers",
+      name: "Strategic Investor",
+      price: "Equity",
+      description: "For investors aligned with our vision of practical, honest AI development",
       features: [
-        "Unlimited Platform Licenses",
-        "Unlimited API Usage",
-        "Enterprise White-Label Framework",
-        "24/7 Dedicated Support Team",
-        "Reseller Rights (40% Margin)",
-        "Custom Development & Training",
-        "Revenue Sharing Options"
+        "Equity participation in seed round",
+        "Board observer rights (negotiable)",
+        "Quarterly investor updates",
+        "Strategic advisory input",
+        "Introduction to industry network",
+        "Early access to all prototypes",
+        "Long-term partnership approach"
       ],
+      icon: <Handshake className="h-6 w-6 text-purple-400" />,
     },
   ]
 
@@ -74,40 +77,43 @@ export default function Pricing() {
       <div className="container relative px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-6 mx-auto max-w-4xl inline-block rounded-full bg-gray-800 px-4 py-1 text-sm">
-            <span className="text-purple-400">💰 Startup-Friendly</span> — <span className="text-green-400">White-Label & Reseller Ready</span>
+            <span className="text-purple-400">🤝 Partnership Models</span> — <span className="text-green-400">No Traditional Pricing Yet</span>
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">AGI Platform Pricing</h2>
-          <p className="mb-8 text-lg text-gray-400">Deploy our flagship AGI systems under your brand with reseller margins</p>
-          <div className="mb-12 p-4 rounded-lg border border-green-900/30 bg-green-950/20 max-w-3xl mx-auto">
-            <p className="text-sm text-green-300 font-medium mb-2">🚀 Investor Opportunity</p>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Ways to Engage</h2>
+          <p className="mb-8 text-lg text-gray-400">We're an early-stage startup — not a SaaS product with tiered pricing. Here's how to work with us.</p>
+          <div className="mb-12 p-4 rounded-lg border border-orange-900/30 bg-orange-950/20 max-w-3xl mx-auto">
+            <p className="text-sm text-orange-300 font-medium mb-2">⚠️ Transparency Note</p>
             <p className="text-gray-300 text-sm">
-              Early investors get preferred reseller rates up to 50% • Platform licensing revenue • White-label market penetration
+              FusionCell is a prototype, not a finished product. We're not offering enterprise licenses or production SLAs. 
+              These engagement models reflect honest ways to collaborate at our current stage.
             </p>
           </div>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {plans.map((plan, index) => (
+          {engagementOptions.map((option, index) => (
             <div
               key={index}
               className={`flex flex-col rounded-xl border bg-gray-900/50 p-8 backdrop-blur-sm ${
-                plan.popular ? "border-2 border-purple-600 relative" : "border-gray-800"
+                option.popular ? "border-2 border-purple-600 relative" : "border-gray-800"
               }`}
             >
-              {plan.popular && (
+              {option.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-purple-600 px-4 py-1 text-sm font-medium text-white">
-                  Most Popular
+                  Most Relevant
                 </div>
               )}
               <div className="mb-6">
-                <h3 className="mb-2 text-2xl font-bold">{plan.name}</h3>
-                <div className="mb-2 flex items-baseline">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-gray-400">/month</span>
+                <div className="flex items-center gap-3 mb-4">
+                  {option.icon}
+                  <h3 className="text-2xl font-bold">{option.name}</h3>
                 </div>
-                <p className="text-gray-400">{plan.description}</p>
+                <div className="mb-2 flex items-baseline">
+                  <span className="text-4xl font-bold">{option.price}</span>
+                </div>
+                <p className="text-gray-400">{option.description}</p>
               </div>
               <ul className="mb-8 flex flex-col gap-3">
-                {plan.features.map((feature, featureIndex) => (
+                {option.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-purple-400" />
                     <span className="text-gray-300">{feature}</span>
@@ -116,16 +122,23 @@ export default function Pricing() {
               </ul>
               <Button
                 className={`mt-auto ${
-                  plan.popular
+                  option.popular
                     ? "bg-purple-600 text-white hover:bg-purple-700"
                     : "bg-gray-800 text-white hover:bg-gray-700"
                 }`}
                 onClick={() => setIsDemoFormOpen(true)}
               >
-                {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                Start Conversation
               </Button>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+            We believe in building relationships before transactions. Reach out and let's discuss how we might work together 
+            as we develop FusionCell and explore the future of AI-powered simulation.
+          </p>
         </div>
       </div>
     </section>

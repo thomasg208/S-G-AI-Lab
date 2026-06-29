@@ -1,78 +1,36 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { useState } from "react"
-import DemoRequestForm from "@/components/DemoRequestForm"
 
 export default function Cta() {
-  const [isDemoFormOpen, setIsDemoFormOpen] = useState(false)
-
   return (
-    <>
-      <section className="relative py-16 overflow-hidden">
-      {/* Simple background */}
-      <div className="absolute inset-0 bg-gray-950"></div>
+    <section className="py-12 md:py-16 bg-[#0B1120]">
+      <div className="container px-4 md:px-8 mx-auto">
+        <div className="bg-gray-900 border border-purple-500/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_0_50px_rgba(147,51,234,0.15)] relative overflow-hidden">
+          
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-transparent pointer-events-none"></div>
 
-      <div className="container relative px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-900/90 border border-gray-800 rounded-xl p-8 md:p-10 relative overflow-hidden shadow-lg">
-            {/* Simplified decorative elements - just one gradient */}
-            <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-full blur-3xl"></div>
-            
-            {/* Gradient border on left instead of top for visual interest */}
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"></div>
-
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="md:max-w-xl">
-                <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                  Ready to revolutionize battery development?
-                </h2>
-                <p className="text-gray-300">
-                  Join pioneering researchers and companies leveraging FusionCell's AI-powered digital twin technology.
-                </p>
-              </div>
-              <div>
-                <Button
-                  onClick={() => setIsDemoFormOpen(true)}
-                  className="h-12 px-6 rounded-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-md"
-                >
-                  Request Early Access <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
+          <div className="flex items-center gap-6 relative z-10 w-full md:w-auto">
+            <div className="w-20 h-20 shrink-0 rounded-xl bg-gray-950 border border-purple-500/50 flex items-center justify-center shadow-[0_0_30px_rgba(147,51,234,0.4)] overflow-hidden">
+              <img src="/images/logos/wingman_ai_logo.png" alt="Wingman Logo" className="w-14 h-14 object-contain" />
             </div>
-
-            {/* Startup features row */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 pt-6 border-t border-gray-800">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-300 text-sm">Early access program</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-300 text-sm">Research partnership</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-300 text-sm">Beta testing opportunities</span>
-              </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Be Among the First to Experience Wingman</h3>
+              <p className="text-gray-400 text-sm md:text-base max-w-xl">
+                See how AI is transforming navigation, tourism, airports, enterprise operations and the connected world.
+              </p>
             </div>
           </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10 shrink-0">
+            <button className="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-600/25 transition-all flex items-center justify-center whitespace-nowrap">
+              Request a Demo <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
+            <button className="px-8 py-4 bg-transparent border border-gray-600 hover:border-gray-400 text-gray-300 font-semibold rounded-lg transition-all flex items-center justify-center whitespace-nowrap">
+              Join Marketplace Waitlist
+            </button>
+          </div>
+          
         </div>
       </div>
-      </section>
-
-      {/* Demo Request Form Modal */}
-      <DemoRequestForm
-        isOpen={isDemoFormOpen}
-        onClose={() => setIsDemoFormOpen(false)}
-      />
-    </>
+    </section>
   )
 }

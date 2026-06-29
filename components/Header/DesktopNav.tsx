@@ -106,17 +106,17 @@ export default function DesktopNav({
             activeMegaMenu === "products" ? "text-white" : "text-gray-300",
           )}
         >
-          Products
+          Platform
         </button>
       </div>
-      <Link href="#blog" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
-        Blog Insight
+      <Link href="#solutions" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
+        Solutions
       </Link>
-      <Link href="#pricing" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
-        Pricing
+      <Link href="#advisors" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
+        Advisors
       </Link>
-      <Link href="#founders" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
-        Founders
+      <Link href="#company" className="text-sm font-medium text-gray-300 hover:text-white px-2 py-1 rounded transition">
+        Company
       </Link>
       {/* Mega Menu */}
       {activeMegaMenu && (

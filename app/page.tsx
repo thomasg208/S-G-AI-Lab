@@ -5,84 +5,36 @@ import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/hero";
 
-// Scroll restoration component
 const ScrollRestoration = () => {
   useEffect(() => {
-    // Set scroll to top
-    window.scrollTo(0, 0);
-
-    // Disable browser's automatic scroll restoration
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-
     const handleBeforeUnload = () => {
       window.scrollTo(0, 0);
     };
-
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-
   return null;
 };
 
-// Lazy load components
-const AILabShowcase = dynamic(() => import("@/components/AILabShowcase"), {
-  ssr: false,
-});
+// Lazy load the new structure components
+const WingmanTeaser = dynamic(() => import("@/components/WingmanTeaser"), { ssr: false });
+const IntelligenceLayers = dynamic(() => import("@/components/intelligence-layers"), { ssr: false });
+const ArchitectureStack = dynamic(() => import("@/components/architecture-stack"), { ssr: false });
+const Environments = dynamic(() => import("@/components/environments"), { ssr: false });
+const Ecosystem = dynamic(() => import("@/components/ecosystem"), { ssr: false });
+const LimitlessImpact = dynamic(() => import("@/components/limitless-impact"), { ssr: false });
+const LeadershipAdvisors = dynamic(() => import("@/components/leadership-advisors"), { ssr: false });
+const Cta = dynamic(() => import("@/components/cta"), { ssr: false });
+const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
 
-const SocialProof = dynamic(() => import("@/components/social-proof"), {
-  ssr: false,
-});
-
-const Features = dynamic(() => import("@/components/features"), {
-  ssr: false,
-});
-
-const HowItWorks = dynamic(() => import("../components/how-it-works"), {
-  ssr: false,
-});
-
-const Founders = dynamic(() => import("@/components/testimonials"), {
-  ssr: false,
-});
-
-const Pricing = dynamic(() => import("@/components/pricing"), {
-  ssr: false,
-});
-
-const ComparisonTable = dynamic(() => import("@/components/comparison-table"), {
-  ssr: false,
-});
-
-const Integrations = dynamic(() => import("@/components/integrations"), {
-  ssr: false,
-});
-
-const Faq = dynamic(() => import("@/components/faq"), {
-  ssr: false,
-});
-
-const BlogPreview = dynamic(() => import("@/components/blog-preview"), {
-  ssr: false,
-});
-
-const Cta = dynamic(() => import("@/components/cta"), {
-  ssr: false,
-});
-
-const Footer = dynamic(() => import("@/components/footer"), {
-  ssr: false,
-});
-
-const ContactModal = dynamic(() => import("@/components/ContactModal"), {
-  ssr: false,
-});
-
-// LazyLoad wrapper component
 function LazyLoad({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -105,48 +57,41 @@ function LazyLoad({ children }: { children: React.ReactNode }) {
 }
 
 export default function LandingPage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    let attempts = 0;
+    const maxAttempts = 30;
+    const tryScroll = () => {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "auto", block: "start" });
+        return;
+      }
+      attempts += 1;
+      if (attempts < maxAttempts) {
+        window.setTimeout(tryScroll, 100);
+      }
+    };
+    window.setTimeout(tryScroll, 50);
+  }, []);
+
   return (
-    <div className="flex flex-col bg-gray-950 text-gray-100 min-h-[11700px]">
+    <div className="flex flex-col bg-gray-950 text-gray-100 min-h-screen">
       <ScrollRestoration />
       <Header />
       <Hero />
-      <LazyLoad>
-        <AILabShowcase />
-      </LazyLoad>
-      <LazyLoad>
-        <SocialProof />
-      </LazyLoad>
-      <LazyLoad>
-        <Features />
-      </LazyLoad>
-      <LazyLoad>
-        <HowItWorks />
-      </LazyLoad>
-      <LazyLoad>
-        <Founders />
-      </LazyLoad>
-      <LazyLoad>
-        <Pricing />
-      </LazyLoad>
-      <LazyLoad>
-        <ComparisonTable />
-      </LazyLoad>
-      <LazyLoad>
-        <Integrations />
-      </LazyLoad>
-      <LazyLoad>
-        <Faq />
-      </LazyLoad>
-      <LazyLoad>
-        <BlogPreview />
-      </LazyLoad>
-      <LazyLoad>
-        <Cta />
-      </LazyLoad>
-      <LazyLoad>
-        <Footer />
-      </LazyLoad>
-      <ContactModal />
+      
+      <LazyLoad><WingmanTeaser /></LazyLoad>
+      <LazyLoad><IntelligenceLayers /></LazyLoad>
+      <LazyLoad><ArchitectureStack /></LazyLoad>
+      <LazyLoad><Environments /></LazyLoad>
+      <LazyLoad><LimitlessImpact /></LazyLoad>
+      <LazyLoad><Ecosystem /></LazyLoad>
+      <LazyLoad><LeadershipAdvisors /></LazyLoad>
+      <LazyLoad><Cta /></LazyLoad>
+      <LazyLoad><Footer /></LazyLoad>
+      
     </div>
   );
 }
