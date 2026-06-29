@@ -21,9 +21,14 @@ export default function Cta() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10 shrink-0">
-            <button className="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-600/25 transition-all flex items-center justify-center whitespace-nowrap">
+            <a 
+              href="https://calendly.com/thomasg208/30min?month=2026-06"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-600/25 transition-all flex items-center justify-center whitespace-nowrap"
+            >
               Request a Demo <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
+            </a>
             <button className="px-8 py-4 bg-transparent border border-gray-600 hover:border-gray-400 text-gray-300 font-semibold rounded-lg transition-all flex items-center justify-center whitespace-nowrap">
               Join Marketplace Waitlist
             </button>
