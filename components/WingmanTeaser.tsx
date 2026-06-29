@@ -25,6 +25,7 @@ export default function WingmanTeaser() {
              <video 
                 ref={videoRef}
                 src="/videos/wingman_developed_by_sg_ai_lab.mp4" 
+                playsInline
                 className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 bg-black ${isPlaying ? 'opacity-100 relative z-20' : 'opacity-0'}`}
                 controls={isPlaying}
              />
@@ -32,7 +33,7 @@ export default function WingmanTeaser() {
              {/* Mockup Background Image Area */}
              {!isPlaying && (
                <>
-                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+                 <div className="absolute inset-0 bg-[url('/images/wingmanv1.png')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
                  
                  {/* Play Button Overlay */}
