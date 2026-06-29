@@ -90,6 +90,11 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>S&G AI Lab · Early-Stage Deep Tech Startup · 26175 Fremont Dr Ste 1, Zimmerman, MN 55398</p>
+          <p className="mt-2 text-gray-300">
+            <a href="mailto:ailab@sgagilab.com" className="hover:text-purple-400 transition-colors">ailab@sgagilab.com</a>
+            <span className="mx-2">·</span>
+            <a href="tel:+18446076239" className="hover:text-purple-400 transition-colors">(844) 607-6239</a>
+          </p>
           <p className="mt-2">© 2025 S&G AI Lab. All rights reserved.</p>
           <p className="mt-4 text-xs text-gray-500 max-w-2xl mx-auto">
             Disclaimer: All products and projects listed are prototypes or concepts unless otherwise specified. 
